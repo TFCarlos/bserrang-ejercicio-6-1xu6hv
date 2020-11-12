@@ -4,40 +4,46 @@
 // En el constructor de "Developer", debéis añadir los parámetros al constructor de la clase padre (super) y setear la propiedad "bestLanguage" sabiendo que es de tipo función que recibe una cadena.
 // Cuando acabéis, debéis descomentar las siguientes líneas de código y colocarlas despúes de todo lo que añadáis:
 
+// Person class.
 class Person {
-  /* Atributos */
+  /* Attributes */
   private name: string;
   private age: number;
-  public saySomething: (x: string) => void;
+  public saySomething: (args0: string) => void;
 
-  constructor(name: string, age: number, saySomething: (string) => void) {
+  constructor(
+    name: string,
+    age: number,
+    saySomething: (args0: string) => void
+  ) {
     this.name = name;
     this.age = age;
     this.saySomething = saySomething;
   }
 
-  /* Metodos */
-
+  /* Methods */
   myNameIs() {
     console.log(this.name);
   }
 }
 
+//Developer class.
 class Developer extends Person {
-  /* Atributos */
-  public bestLanguage: (x: string) => void;
+  /* Attributes */
+  public bestLanguage: (args0: string) => void;
 
   constructor(
     name: string,
     age: number,
-    saySomething: (string) => void,
-    bestLanguage: (string) => void
+    saySomething: (args0: string) => void,
+    bestLanguage: (args0: string) => void
   ) {
     super(name, age, saySomething);
     this.bestLanguage = bestLanguage;
   }
 }
 
+/* Example */
 const developer = new Developer(
   "pedro",
   35,
